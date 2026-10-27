@@ -1,0 +1,26 @@
+# Provider plugins and module copies that `terraform init` downloads.
+# Large, platform-specific, and recreated by `terraform init`.
+.terraform/
+
+# Terraform state. State can contain secrets (such as the game password) in
+# plain text, and the real copy lives in the S3 backend.
+*.tfstate
+*.tfstate.*
+
+# Real variable values, including the game password.
+# terraform.tfvars.example is committed instead, with placeholder values.
+terraform.tfvars
+*.auto.tfvars
+
+# Saved plan files. A saved plan contains variable values, including secrets.
+*.tfplan
+
+# Crash logs written when Terraform itself fails.
+crash.log
+crash.*.log
+
+# macOS Finder metadata.
+.DS_Store
+
+# Note: .terraform.lock.hcl is committed on purpose. The lock file pins exact
+# provider versions and checksums, so every machine uses the same provider build.
